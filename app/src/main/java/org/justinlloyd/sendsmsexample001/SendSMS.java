@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 
 public class SendSMS extends Activity {
@@ -41,7 +42,7 @@ public class SendSMS extends Activity {
     public void buttonSendSMS(View v)
     {
         Log.d(SendSMS.class.getName(), "Send SMS button clicked");
-        String destinationTelephoneNumber = "8185551234";
+        String destinationTelephoneNumber = ((EditText)(findViewById(R.id.editTextDestinationTelephoneNumber))).getText().toString();
         Uri smsURI = Uri.fromParts("sms", destinationTelephoneNumber, null);
         Intent smsIntent = new Intent(Intent.ACTION_VIEW, smsURI);
         startActivity(smsIntent);
