@@ -45,6 +45,7 @@ public class SendSMS extends Activity {
         String destinationTelephoneNumber = ((EditText)(findViewById(R.id.editTextDestinationTelephoneNumber))).getText().toString();
         if (destinationTelephoneNumber.isEmpty())
         {
+            Log.d(SendSMS.class.getName(), "The telephone number supplied by the user is empty.");
             return;
         }
 
