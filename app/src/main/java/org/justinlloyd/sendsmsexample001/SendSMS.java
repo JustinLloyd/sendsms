@@ -43,6 +43,11 @@ public class SendSMS extends Activity {
     {
         Log.d(SendSMS.class.getName(), "Send SMS button clicked");
         String destinationTelephoneNumber = ((EditText)(findViewById(R.id.editTextDestinationTelephoneNumber))).getText().toString();
+        if (destinationTelephoneNumber.isEmpty())
+        {
+            return;
+        }
+
         Uri smsURI = Uri.fromParts("sms", destinationTelephoneNumber, null);
         Intent smsIntent = new Intent(Intent.ACTION_VIEW, smsURI);
         startActivity(smsIntent);
