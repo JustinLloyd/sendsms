@@ -1,6 +1,8 @@
 package org.justinlloyd.sendsmsexample001;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -39,5 +41,9 @@ public class SendSMS extends Activity {
     public void buttonSendSMS(View v)
     {
         Log.d(SendSMS.class.getName(), "Send SMS button clicked");
+        String destinationTelephoneNumber = "8185551234";
+        Uri smsURI = Uri.fromParts("sms", destinationTelephoneNumber, null);
+        Intent smsIntent = new Intent(Intent.ACTION_VIEW, smsURI);
+        startActivity(smsIntent);
     }
 }
