@@ -53,6 +53,7 @@ public class SendSMS extends Activity {
 
         Uri smsURI = Uri.fromParts("sms", destinationTelephoneNumber, null);
         Intent smsIntent = new Intent(Intent.ACTION_VIEW, smsURI);
+        smsIntent.putExtra("sms_body", "Let's tell the world \"hello!\" from our SendSMS app");
         startActivity(smsIntent);
         Log.d(SendSMS.class.getName(), "Sent a request to open the SMS Composer activity");
         Toast.makeText(this, "Opening SMS composer", Toast.LENGTH_SHORT).show();
