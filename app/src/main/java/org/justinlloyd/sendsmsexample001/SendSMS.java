@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class SendSMS extends Activity {
@@ -46,6 +47,7 @@ public class SendSMS extends Activity {
         if (destinationTelephoneNumber.isEmpty())
         {
             Log.d(SendSMS.class.getName(), "The telephone number supplied by the user is empty.");
+            Toast.makeText(this, "You need to supply a destination telephone number of where to send an SMS.", Toast.LENGTH_LONG).show();
             return;
         }
 
