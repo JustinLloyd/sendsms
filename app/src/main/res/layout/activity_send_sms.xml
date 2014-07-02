@@ -12,10 +12,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Send SMS"
-        android:id="@+id/sendSMSButton"
+        android:id="@+id/buttonSendSMS"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="17dp"
         android:layout_marginTop="87dp"
         android:onClick="buttonSendSMS" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:id="@+id/editTextDestinationTelephoneNumber"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/buttonSendSMS"
+        android:text="818-555-1234" />
 </RelativeLayout>
