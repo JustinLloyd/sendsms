@@ -2,6 +2,7 @@ package org.justinlloyd.sendsmsexample001;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -37,5 +38,6 @@ public class SendSMS extends Activity {
 
     public void buttonSendSMS(View v)
     {
+        Log.d(SendSMS.class.getName(), "Send SMS button clicked");
     }
 }
