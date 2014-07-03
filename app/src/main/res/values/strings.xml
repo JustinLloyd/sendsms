@@ -6,4 +6,5 @@
     <string name="action_settings">Settings</string>
     <string name="toast_opening_sms_composer">"Opening SMS composer"</string>
     <string name="toast_empty_message">You need to supply some message content</string>
+    <string name="toast_empty_number">You need to supply a destination telephone number of where to send an SMS.</string>
 </resources>
