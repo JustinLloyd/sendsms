@@ -62,7 +62,7 @@ public class SendSMS extends Activity {
         }
 
         Uri smsURI = Uri.fromParts("sms", destinationTelephoneNumber, null);
-        Intent smsIntent = new Intent(Intent.ACTION_VIEW, smsURI);
+        Intent smsIntent = new Intent(Intent.ACTION_SENDTO, smsURI);
         smsIntent.putExtra("sms_body", message);
         startActivity(smsIntent);
         Log.d(TAG, String.format("Sent a request to open the SMS Composer activity and send the following message: \"%s\" to \"%s\"", message, destinationTelephoneNumber));
