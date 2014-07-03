@@ -49,17 +49,8 @@ public class SendSMS extends Activity {
         Log.d(TAG, "Compose SMS button clicked");
         String destinationTelephoneNumber = ((EditText)(findViewById(R.id.editTextDestinationTelephoneNumber))).getText().toString();
         String message = ((EditText)(findViewById(R.id.editTextMessage))).getText().toString();
-        if (destinationTelephoneNumber.isEmpty())
+        if (!isValidSMSMessage(destinationTelephoneNumber, message))
         {
-            Log.e(TAG, "The telephone number supplied by the user is empty.");
-            Toast.makeText(this, getResources().getString(R.string.toast_empty_number), Toast.LENGTH_LONG).show();
-            return;
-        }
-
-        if (message.isEmpty())
-        {
-            Log.e(TAG, "The message supplied by the user is empty.");
-            Toast.makeText(this, getResources().getString(R.string.toast_empty_message), Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -73,17 +64,8 @@ public class SendSMS extends Activity {
         Log.d(TAG, "Compose SMS button clicked");
         String destinationTelephoneNumber = ((EditText)(findViewById(R.id.editTextDestinationTelephoneNumber))).getText().toString();
         String message = ((EditText)(findViewById(R.id.editTextMessage))).getText().toString();
-        if (destinationTelephoneNumber.isEmpty())
+        if (!isValidSMSMessage(destinationTelephoneNumber, message))
         {
-            Log.e(TAG, "The telephone number supplied by the user is empty.");
-            Toast.makeText(this, getResources().getString(R.string.toast_empty_number), Toast.LENGTH_LONG).show();
-            return;
-        }
-
-        if (message.isEmpty())
-        {
-            Log.e(TAG, "The message supplied by the user is empty.");
-            Toast.makeText(this, getResources().getString(R.string.toast_empty_message), Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -94,5 +76,24 @@ public class SendSMS extends Activity {
         Log.d(TAG, String.format("Sent a request to open the SMS Composer activity and send the following message: \"%s\" to \"%s\"", message, destinationTelephoneNumber));
         Toast.makeText(this, getResources().getString(R.string.toast_opening_sms_composer), Toast.LENGTH_SHORT).show();
     }
+
+    private boolean isValidSMSMessage(String destinationTelephoneNumber, String message) {
+        if (destinationTelephoneNumber.isEmpty())
+        {
+            Log.e(TAG, "The telephone number supplied by the user is empty.");
+            Toast.makeText(this, getResources().getString(R.string.toast_empty_number), Toast.LENGTH_LONG).show();
+            return false;
+        }
+
+        if (message.isEmpty())
+        {
+            Log.e(TAG, "The message supplied by the user is empty.");
+            Toast.makeText(this, getResources().getString(R.string.toast_empty_message), Toast.LENGTH_LONG).show();
+            return false;
+        }
+        
+        return true;
+    }
+
 
 }
