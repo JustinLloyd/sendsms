@@ -45,6 +45,23 @@ public class SendSMS extends Activity {
     public void buttonSendSMS(View v)
     {
         Log.d(TAG, "Send SMS button clicked");
+        Log.d(TAG, "Compose SMS button clicked");
+        String destinationTelephoneNumber = ((EditText)(findViewById(R.id.editTextDestinationTelephoneNumber))).getText().toString();
+        String message = ((EditText)(findViewById(R.id.editTextMessage))).getText().toString();
+        if (destinationTelephoneNumber.isEmpty())
+        {
+            Log.e(TAG, "The telephone number supplied by the user is empty.");
+            Toast.makeText(this, getResources().getString(R.string.toast_empty_number), Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        if (message.isEmpty())
+        {
+            Log.e(TAG, "The message supplied by the user is empty.");
+            Toast.makeText(this, getResources().getString(R.string.toast_empty_message), Toast.LENGTH_LONG).show();
+            return;
+        }
+
     }
 
     public void buttonComposeSMS(View v)
