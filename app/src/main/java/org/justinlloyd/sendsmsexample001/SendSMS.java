@@ -65,6 +65,7 @@ public class SendSMS extends Activity {
 
         SmsManager.getDefault().sendTextMessage(destinationTelephoneNumber, null, message, null, null);
         Log.d(TAG, String.format("Directly sent SMS message with the following content: \"%s\" to \"%s\"", message, destinationTelephoneNumber));
+        Toast.makeText(this, getResources().getString(R.string.toast_sent_sms), Toast.LENGTH_SHORT).show();
     }
 
     public void buttonComposeSMS(View v)
@@ -93,5 +94,5 @@ public class SendSMS extends Activity {
         Log.d(TAG, String.format("Sent a request to open the SMS Composer activity and send the following message: \"%s\" to \"%s\"", message, destinationTelephoneNumber));
         Toast.makeText(this, getResources().getString(R.string.toast_opening_sms_composer), Toast.LENGTH_SHORT).show();
     }
-    
+
 }
