@@ -13,11 +13,10 @@
         android:layout_height="wrap_content"
         android:text="Send SMS"
         android:id="@+id/buttonSendSMS"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="17dp"
-        android:layout_marginTop="87dp"
-        android:onClick="buttonSendSMS" />
+        android:layout_marginTop="37dp"
+        android:onClick="buttonSendSMS"
+        android:layout_below="@+id/editTextMessage"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -28,4 +27,17 @@
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/buttonSendSMS"
         android:text="818-555-1234" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextMessage"
+        android:layout_below="@+id/editTextDestinationTelephoneNumber"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="28dp"
+        android:layout_alignParentEnd="true"
+        android:text="Let's tell the world &quot;hello!&quot; from our SendSMS app"
+        android:inputType="textMultiLine"
+        android:minHeight="125dp"
+        android:gravity="bottom" />
 </RelativeLayout>
