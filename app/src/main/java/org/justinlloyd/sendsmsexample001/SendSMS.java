@@ -62,6 +62,7 @@ public class SendSMS extends Activity {
             return;
         }
 
+        Log.d(TAG, String.format("Directly sent SMS message with the following content: \"%s\" to \"%s\"", message, destinationTelephoneNumber));
     }
 
     public void buttonComposeSMS(View v)
