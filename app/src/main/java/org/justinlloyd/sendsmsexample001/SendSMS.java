@@ -16,11 +16,16 @@ import android.widget.Toast;
 public class SendSMS extends Activity {
 
     public static final String TAG = SendSMS.class.getName();
+    private EditText editTextMessage;
+    private EditText editTextTelephoneNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_sms);
+
+        editTextTelephoneNumber = (EditText) (findViewById(R.id.editTextDestinationTelephoneNumber));
+        editTextMessage = (EditText) (findViewById(R.id.editTextMessage));
     }
 
 
@@ -47,8 +52,8 @@ public class SendSMS extends Activity {
     {
         Log.d(TAG, "Send SMS button clicked");
         Log.d(TAG, "Compose SMS button clicked");
-        String destinationTelephoneNumber = ((EditText)(findViewById(R.id.editTextDestinationTelephoneNumber))).getText().toString();
-        String message = ((EditText)(findViewById(R.id.editTextMessage))).getText().toString();
+        String destinationTelephoneNumber = editTextTelephoneNumber.getText().toString();
+        String message = editTextMessage.getText().toString();
         if (!isValidSMSMessage(destinationTelephoneNumber, message))
         {
             return;
@@ -62,8 +67,8 @@ public class SendSMS extends Activity {
     public void buttonComposeSMS(View v)
     {
         Log.d(TAG, "Compose SMS button clicked");
-        String destinationTelephoneNumber = ((EditText)(findViewById(R.id.editTextDestinationTelephoneNumber))).getText().toString();
-        String message = ((EditText)(findViewById(R.id.editTextMessage))).getText().toString();
+        String destinationTelephoneNumber = editTextTelephoneNumber.getText().toString();
+        String message = editTextMessage.getText().toString();
         if (!isValidSMSMessage(destinationTelephoneNumber, message))
         {
             return;
@@ -91,7 +96,7 @@ public class SendSMS extends Activity {
             Toast.makeText(this, getResources().getString(R.string.toast_empty_message), Toast.LENGTH_LONG).show();
             return false;
         }
-        
+
         return true;
     }
 
