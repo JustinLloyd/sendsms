@@ -52,6 +52,11 @@ public class SendSMS extends Activity {
             return;
         }
 
+        if (message.isEmpty())
+        {
+            return;
+        }
+        
         Uri smsURI = Uri.fromParts("sms", destinationTelephoneNumber, null);
         Intent smsIntent = new Intent(Intent.ACTION_VIEW, smsURI);
         smsIntent.putExtra("sms_body", "Let's tell the world \"hello!\" from our SendSMS app");
