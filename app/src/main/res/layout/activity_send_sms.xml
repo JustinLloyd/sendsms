@@ -40,4 +40,13 @@
         android:inputType="textMultiLine"
         android:minHeight="125dp"
         android:gravity="bottom" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Compose SMS"
+        android:id="@+id/buttonComposeSMS"
+        android:layout_alignBottom="@+id/buttonSendSMS"
+        android:layout_alignParentEnd="true"
+        android:onClick="buttonComposeSMS" />
 </RelativeLayout>
