@@ -61,7 +61,7 @@ public class SendSMS extends Activity {
             return;
         }
 
-        Uri smsURI = Uri.fromParts("sms", destinationTelephoneNumber, null);
+        Uri smsURI = Uri.fromParts("smsto", destinationTelephoneNumber, null);
         Intent smsIntent = new Intent(Intent.ACTION_SENDTO, smsURI);
         smsIntent.putExtra("sms_body", message);
         startActivity(smsIntent);
