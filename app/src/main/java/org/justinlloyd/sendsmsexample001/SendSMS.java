@@ -47,14 +47,14 @@ public class SendSMS extends Activity {
         String message = ((EditText)(findViewById(R.id.editTextMessage))).getText().toString();
         if (destinationTelephoneNumber.isEmpty())
         {
-            Log.d(SendSMS.class.getName(), "The telephone number supplied by the user is empty.");
+            Log.e(SendSMS.class.getName(), "The telephone number supplied by the user is empty.");
             Toast.makeText(this, "You need to supply a destination telephone number of where to send an SMS.", Toast.LENGTH_LONG).show();
             return;
         }
 
         if (message.isEmpty())
         {
-            Log.d(SendSMS.class.getName(), "The message supplied by the user is empty.");
+            Log.e(SendSMS.class.getName(), "The message supplied by the user is empty.");
             return;
         }
 
