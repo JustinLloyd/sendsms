@@ -42,6 +42,11 @@ public class SendSMS extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void buttonSendSMS(View v)
+    {
+
+    }
+
     public void buttonComposeSMS(View v)
     {
         Log.d(TAG, "Send SMS button clicked");
