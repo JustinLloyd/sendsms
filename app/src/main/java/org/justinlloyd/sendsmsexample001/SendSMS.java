@@ -49,7 +49,7 @@ public class SendSMS extends Activity {
 
     public void buttonComposeSMS(View v)
     {
-        Log.d(TAG, "Send SMS button clicked");
+        Log.d(TAG, "Compose SMS button clicked");
         String destinationTelephoneNumber = ((EditText)(findViewById(R.id.editTextDestinationTelephoneNumber))).getText().toString();
         String message = ((EditText)(findViewById(R.id.editTextMessage))).getText().toString();
         if (destinationTelephoneNumber.isEmpty())
