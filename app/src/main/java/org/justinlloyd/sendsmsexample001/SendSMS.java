@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 public class SendSMS extends Activity {
 
+    public static final String TAG = SendSMS.class.getName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,19 +44,19 @@ public class SendSMS extends Activity {
 
     public void buttonSendSMS(View v)
     {
-        Log.d(SendSMS.class.getName(), "Send SMS button clicked");
+        Log.d(TAG, "Send SMS button clicked");
         String destinationTelephoneNumber = ((EditText)(findViewById(R.id.editTextDestinationTelephoneNumber))).getText().toString();
         String message = ((EditText)(findViewById(R.id.editTextMessage))).getText().toString();
         if (destinationTelephoneNumber.isEmpty())
         {
-            Log.e(SendSMS.class.getName(), "The telephone number supplied by the user is empty.");
+            Log.e(TAG, "The telephone number supplied by the user is empty.");
             Toast.makeText(this, "You need to supply a destination telephone number of where to send an SMS.", Toast.LENGTH_LONG).show();
             return;
         }
 
         if (message.isEmpty())
         {
-            Log.e(SendSMS.class.getName(), "The message supplied by the user is empty.");
+            Log.e(TAG, "The message supplied by the user is empty.");
             Toast.makeText(this, "You need to supply some message content", Toast.LENGTH_LONG).show();
             return;
         }
@@ -63,7 +65,7 @@ public class SendSMS extends Activity {
         Intent smsIntent = new Intent(Intent.ACTION_VIEW, smsURI);
         smsIntent.putExtra("sms_body", message);
         startActivity(smsIntent);
-        Log.d(SendSMS.class.getName(), String.format("Sent a request to open the SMS Composer activity and send the following message: \"%s\" to \"%s\"", message, destinationTelephoneNumber));
+        Log.d(TAG, String.format("Sent a request to open the SMS Composer activity and send the following message: \"%s\" to \"%s\"", message, destinationTelephoneNumber));
         Toast.makeText(this, "Opening SMS composer", Toast.LENGTH_SHORT).show();
     }
 }
