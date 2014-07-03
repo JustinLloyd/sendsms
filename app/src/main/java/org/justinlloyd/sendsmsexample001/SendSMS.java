@@ -54,9 +54,10 @@ public class SendSMS extends Activity {
 
         if (message.isEmpty())
         {
+            Log.d(SendSMS.class.getName(), "The message supplied by the user is empty.");
             return;
         }
-        
+
         Uri smsURI = Uri.fromParts("sms", destinationTelephoneNumber, null);
         Intent smsIntent = new Intent(Intent.ACTION_VIEW, smsURI);
         smsIntent.putExtra("sms_body", "Let's tell the world \"hello!\" from our SendSMS app");
