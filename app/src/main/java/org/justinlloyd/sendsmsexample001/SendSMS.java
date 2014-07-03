@@ -50,7 +50,7 @@ public class SendSMS extends Activity {
         if (destinationTelephoneNumber.isEmpty())
         {
             Log.e(TAG, "The telephone number supplied by the user is empty.");
-            Toast.makeText(this, "You need to supply a destination telephone number of where to send an SMS.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getResources().getString(R.string.toast_empty_number), Toast.LENGTH_LONG).show();
             return;
         }
 
