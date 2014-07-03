@@ -44,7 +44,7 @@ public class SendSMS extends Activity {
 
     public void buttonSendSMS(View v)
     {
-
+        Log.d(TAG, "Send SMS button clicked");
     }
 
     public void buttonComposeSMS(View v)
