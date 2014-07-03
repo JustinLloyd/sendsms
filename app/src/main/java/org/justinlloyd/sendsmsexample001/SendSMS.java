@@ -57,7 +57,7 @@ public class SendSMS extends Activity {
         if (message.isEmpty())
         {
             Log.e(TAG, "The message supplied by the user is empty.");
-            Toast.makeText(this, "You need to supply some message content", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getResources().getString(R.string.toast_empty_message), Toast.LENGTH_LONG).show();
             return;
         }
 
